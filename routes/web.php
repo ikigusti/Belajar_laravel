@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pengenalancontroller;
 use App\Http\Controllers\Latihancontroller;
+use App\Http\Controllers\postController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\SlotController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +57,25 @@ Route::get('/pengenalan',[App\Http\Controllers\pengenalancontroller::class,'peng
 
 // pasing data dinamis(route parameter) dari controller ke view
 Route::get('/intro/{nama}/{alamat}/{umur}',[App\Http\Controllers\pengenalancontroller::class,'intro']);
-Route::get('/siswa',[App\Http\Controllers\pengenalancontroller::class,'siswa']);
+Route::get('/siswa1',[App\Http\Controllers\pengenalancontroller::class,'siswa']);
 Route::get('/latihan',[App\Http\Controllers\Latihancontroller::class,'menu']);
 Route::get('/latihan2',[App\Http\Controllers\Latihancontroller::class,'dosen']);
+Route::get('/latihan3',[App\Http\Controllers\Latihancontroller::class,'tv']);
+
+Route::get('/post',[App\Http\Controllers\postController::class,'index']);
+
+Route::get('/soal',[App\Http\Controllers\SiswaController::class,'index']);
+Route::get('/perserta',[App\Http\Controllers\SiswaController::class,'ser']);
+Route::get('/soal1',[App\Http\Controllers\SiswaController::class,'con']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+Route::resource('slot',SlotController::class);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/test-admin',function(){
+    return view('layouts.admin');
+});
+

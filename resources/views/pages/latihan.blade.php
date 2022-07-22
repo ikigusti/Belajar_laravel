@@ -8,8 +8,9 @@
 </head>
 <body>
     <fieldset>
-        <legend><b>Latihan 1</b></legend>
+        <legend><h2>Soal 1</h2></legend>
         <b>Soal 1</b>
+        <hr>
         @foreach ($menu as $list)
         <ul>
             <li>{{$list['bera']}}</li>
