@@ -6,6 +6,7 @@ use App\Http\Controllers\Latihancontroller;
 use App\Http\Controllers\postController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\SlotController;
+use App\Http\Controllers\HotelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,3 +80,4 @@ Route::get('/test-admin',function(){
     return view('layouts.admin');
 });
 
+Route::get('/karyawan',[App\Http\Controllers\HotelController::class,'hotel']);
