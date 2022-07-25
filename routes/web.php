@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Siswa2Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -79,5 +78,3 @@ Route::get('/test-admin', function () {
 });
 
 Route::get('/karyawan', [App\Http\Controllers\HotelController::class, 'hotel']);
-
-Route::resource('siswa2', Siswa2Controller::class);
